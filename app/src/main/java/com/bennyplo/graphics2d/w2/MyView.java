@@ -70,14 +70,19 @@ public class MyView extends View {
         drawLine(canvas, coordinates, 0, 1);
         drawLine(canvas, coordinates, 1, 2);
 
+/*
         coordinates = new AffineUtil(0).scale(coordinates, 10, 10, 1);
         drawLine(canvas, coordinates, 0, 1);
         drawLine(canvas, coordinates, 1, 2);
+*/
 
-        coordinates = new AffineUtil(0).rotate(coordinates, 45, 0);
+     /*   coordinates = new AffineUtil(0).scale(coordinates, 1.2, 1.2, 0);
+        drawLine(canvas, coordinates, 0, 1);
+        drawLine(canvas, coordinates, 1, 2);*/
+
+        coordinates = new AffineUtil(0).rotate(coordinates, 100, 0);
         drawLine(canvas, coordinates, 0, 1);
         drawLine(canvas, coordinates, 1, 2);
-
 
     }
 

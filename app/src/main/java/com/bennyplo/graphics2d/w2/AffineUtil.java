@@ -1,6 +1,11 @@
 package com.bennyplo.graphics2d.w2;
 
+import android.util.Log;
+
 public class AffineUtil {
+
+    private static final String TAG = "AffineUtil";
+
     private static int mode = 0;
     private double[] matrix;
 
@@ -131,6 +136,8 @@ public class AffineUtil {
             matrix[4] = cosTHETA;
             matrix[1] = -sinTHETA;
             matrix[3] = sinTHETA;
+            Log.d(TAG, "rotate: " + matrix.length);
+            Log.d(TAG, "rotate: ! " + sinTHETA);
 
         } else {
             // 3D

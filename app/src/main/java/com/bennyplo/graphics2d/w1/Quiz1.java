@@ -1,17 +1,23 @@
-package com.bennyplo.graphics2d;
+package com.bennyplo.graphics2d.w1;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-public class QuizzAffine extends View {
+/**
+ * Created by benlo on 09/05/2018.
+ * <p>
+ * 145 is radius
+ */
+
+public class Quiz1 extends View {
     private Paint redPaint;
     private Paint bluePaint;
     private Paint blackPaint;
 
 
-    public QuizzAffine(Context context) {
+    public Quiz1(Context context) {
         super(context, null);
         //Add your initialisation code here
         redPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -24,6 +30,7 @@ public class QuizzAffine extends View {
         bluePaint.setColor(0x0000ff00);//color red
         bluePaint.setStrokeWidth(5);//set the line stroke width to 5
 
+
     }
 
 
@@ -34,9 +41,6 @@ public class QuizzAffine extends View {
         canvas.drawRect(500, 500, 700, 700, redPaint);
         canvas.drawCircle(600, 600, 145, redPaint);
         canvas.drawCircle(600, 600, 120, redPaint);
-
-        canvas.rotate(45);
-        canvas.scale(2, 1);
 
     }
 }

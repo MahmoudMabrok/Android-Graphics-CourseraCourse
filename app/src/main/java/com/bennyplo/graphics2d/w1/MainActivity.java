@@ -1,4 +1,4 @@
-package com.bennyplo.graphics2d;
+package com.bennyplo.graphics2d.w1;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.bennyplo.graphics2d;
+package com.bennyplo.graphics2d.w1;
 
 import android.content.Context;
 import android.graphics.Canvas;

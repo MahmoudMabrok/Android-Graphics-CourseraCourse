@@ -29,10 +29,13 @@ public class MyView extends View {
         cube_vertices[5] = new Coordinate(1, -1, 1, 1);
         cube_vertices[6] = new Coordinate(1, 1, -1, 1);
         cube_vertices[7] = new Coordinate(1, 1, 1, 1);
-        draw_cube_vertices = translate(cube_vertices, 10, 10, 10);
+        draw_cube_vertices = translate(cube_vertices, 2, 2, 2);
         draw_cube_vertices = scale(draw_cube_vertices, 40, 40, 40);
         draw_cube_vertices = rotate(draw_cube_vertices, 45, 1);
         draw_cube_vertices = rotate(draw_cube_vertices, 45, 0);
+        draw_cube_vertices = rotate(draw_cube_vertices, 80, 2);
+        draw_cube_vertices = rotate(draw_cube_vertices, 30, 1);
+        //  draw_cube_vertices = shear(draw_cube_vertices, 2, 1);
         thisview.invalidate();//update the view
     }
 
@@ -62,6 +65,7 @@ public class MyView extends View {
         //draw objects on the screen
         super.onDraw(canvas);
         DrawCube(canvas);//draw a cube onto the screen
+/*
 
         Coordinate[] coordinates = new Coordinate[3];
         coordinates[0] = new Coordinate(100, 100);
@@ -70,19 +74,24 @@ public class MyView extends View {
         drawLine(canvas, coordinates, 0, 1);
         drawLine(canvas, coordinates, 1, 2);
 
+*/
 /*
         coordinates = new AffineUtil(0).scale(coordinates, 10, 10, 1);
         drawLine(canvas, coordinates, 0, 1);
         drawLine(canvas, coordinates, 1, 2);
-*/
+*//*
 
-     /*   coordinates = new AffineUtil(0).scale(coordinates, 1.2, 1.2, 0);
+
+         */
+/*   coordinates = new AffineUtil(0).scale(coordinates, 1.2, 1.2, 0);
         drawLine(canvas, coordinates, 0, 1);
-        drawLine(canvas, coordinates, 1, 2);*/
+        drawLine(canvas, coordinates, 1, 2);*//*
+
 
         coordinates = new AffineUtil(0).rotate(coordinates, 100, 0);
         drawLine(canvas, coordinates, 0, 1);
         drawLine(canvas, coordinates, 1, 2);
+*/
 
     }
 
@@ -141,12 +150,12 @@ public class MyView extends View {
     //***********************************************************
     //Affine transformation
     public Coordinate[] translate(Coordinate[] vertices, double tx, double ty, double tz) {
-        /*double[] matrix = GetIdentityMatrix();
+        double[] matrix = GetIdentityMatrix();
         matrix[3] = tx;
         matrix[7] = ty;
         matrix[11] = tz;
-        return Transformation(vertices, matrix);*/
-        return new AffineUtil(1).translate(vertices, tx, ty, tz);
+        return Transformation(vertices, matrix);
+        // return new AffineUtil(1).translate(vertices, tx, ty, tz);
     }
 
     private Coordinate[] scale(Coordinate[] vertices, double sx, double sy, double sz) {
@@ -166,6 +175,9 @@ public class MyView extends View {
 
 
     private Coordinate[] rotate(Coordinate[] vertices, double angle, int axes) {
+
+        angle = (angle * 2 * Math.PI) / (360);
+
         double[] matrix = GetIdentityMatrix();
         double cosTHETA = Math.cos(angle);
         double sinTHETA = Math.sin(angle);

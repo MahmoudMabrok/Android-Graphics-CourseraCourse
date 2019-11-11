@@ -127,6 +127,7 @@ public class AffineUtil {
 
 
     public Coordinate[] rotate(Coordinate[] vertices, double angle, int axes) {
+        angle = (angle * 2 * Math.PI) / (360);
         double[] matrix = GetIdentityMatrix();
         double cosTHETA = Math.cos(angle);
         double sinTHETA = Math.sin(angle);
